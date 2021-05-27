@@ -1,0 +1,13 @@
+SELECT title FROM albums;
+
+SELECT * FROM albums LIMIT 15;
+
+SELECT @@servername;
+
+SELECT DB_NAME();
+
+SELECT @@version;
+
+SELECT aslkdfjalskdfjlaskjdf
+laksjdflakjsfldk
+laskdjflasjdflkaf
