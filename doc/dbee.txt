@@ -1,0 +1,57 @@
+*dbee.txt* SQL explorer written in python for vim with <3
+             _ _                            _                ~
+            | | |                          (_)               ~
+          __| | |__   ___  ___   _ ____   ___ _ __ ___       ~
+         / _` | '_ \ / _ \/ _ \ | '_ \ \ / / | '_ ` _ \      ~
+        | (_| | |_) |  __/  __/_| | | \ V /| | | | | | |     ~
+         \__,_|_.__/ \___|\___(_)_| |_|\_/ |_|_| |_| |_|     ~
+
+
+                  SQL queries made simple.
+
+===============================================================================
+
+CONTENTS                                 *dbee-contents*
+
+    1. Introduction ..........|dbee-intro|
+    2. Usage ................ |dbee-usage|
+    3. Mappings ............. |dbee-mappings|
+    4. License .............. |dbee-license|
+
+
+Original Author:    Maximiliano Greco
+License:            BSD-3-Clause
+
+===============================================================================
+Section 1: Introduction                                            *dbee-intro*
+
+Simple python plugin wich allow you get arbitrary queries in vim.
+
+===============================================================================
+Section 2: Usage                                                   *dbee-usage*
+
+*DBeeSetConnection* set the connection which will be used by SQLAlchemy.
+
+    :DBeeSetConnection sqlite:////./tests/chinook.db
+
+*DBeeQuery* returns the query in a new buffer, press q to delete the buffer.
+To do that select a query and pres ":DBeeQuery".
+
+    :'<,'>DBeeQuery
+
+*DBeeInfo* prints out the url in use.
+
+    :DBeeInfo
+
+===============================================================================
+Section 3: Mappings                                             *dbee-mappings*
+
+No mappings defined by default. You can create your own maps by doing:
+
+    vnoremap <C-q> :DBeeQuery<cr>
+    nnoremap <C-i> :DBeeInfo<cr>
+
+===============================================================================
+Section 4: License                                               *dbee-license*
+
+Todo

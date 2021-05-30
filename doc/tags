@@ -1,3 +1,6 @@
-nvim-example-python-plugin-contents	nvim-example-python-plugin.txt	/*nvim-example-python-plugin-contents*
-nvim-example-python-plugin-intro	nvim-example-python-plugin.txt	/*nvim-example-python-plugin-intro*
-nvim-example-python-plugin.txt	nvim-example-python-plugin.txt	/*nvim-example-python-plugin.txt*
+dbee-contents	dbee.txt	/*dbee-contents*
+dbee-intro	dbee.txt	/*dbee-intro*
+dbee-usage	dbee.txt	/*dbee-usage*
+dbee-mappings	dbee.txt	/*dbee-mappings*
+dbee-license	dbee.txt	*dbee-license*
+dbee.txt	dbee.txt	/*dbee.txt*

@@ -6,7 +6,6 @@ let loaded_dbee=1
 echo 'Loaded dbee.nvim'
 
 function DBeeMarkBuffer()
-    echo 'Marked!'
     setlocal buftype=nofile
     setlocal bufhidden=hide
     setlocal noswapfile
@@ -15,3 +14,4 @@ function DBeeMarkBuffer()
 endfunction
 
 autocmd! BufNewFile __DBee__ call DBeeMarkBuffer()
+

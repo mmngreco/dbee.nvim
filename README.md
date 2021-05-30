@@ -1,30 +1,41 @@
-# Example Neovim Python Plugin
+# dbee.nvim
 
-very wip!!!!
 
+`dbee.nvim` is a SQL explorer in vim with Python as backend. Allow you setup a
+database connection using an url which is processed by SQLAlchemy and returns
+the query result in a new buffer.
+
+# Installation
+
+
+```vim
+Plug 'https://github.com/mmngreco/debee.nvim' {':UpdateRemotePlugins'}
+```
+
+## Python dependencies
+
+- sqlalchemy
+- pandas
+
+# Usage
+
+- `:DBeeSetConnection <url>`: replace `<url>` with your desired connection
+    string.
+- `:DBeeInfo`: prints out the current connetion string.
+- `:'<,'>DBeeQuery`: only in visual mode, returns the query output in a new buffer.
+
+# Mapping
+
+No mappings defined by default. You can define your own mapping adding
+something like this in your `vimrc`:
+
+```vim
+vnoremap <C-q> DBeeQuery
+```
+
+# Development
 
 ```bash
-./run.sh
+./run.sh vim
+./run.sh ipy
 ```
-
-```bash
-nvim -u vimrc +UpdateRemotePlugin +qa && NVIM_LISTEN_ADDRESS=/tmp/nvim nvim -u vimrc tests/query.txt
-ipython -i -c "from pynvim import attach; nvim = attach('socket', path='/tmp/nvim')"
-```
-
-To test from python
-
-```python
->>> from pynvim import attach
->>> nvim = attach('socket', path='/tmp/nvim')
->>> buffer = nvim.current.buffer # Get the current buffer
->>> buffer[0] = 'replace first line'
->>> buffer[:] = ['replace whole buffer']
->>> nvim.command('vsplit')
->>> nvim.windows[1].width = 10
->>> nvim.vars['global_var'] = [1, 2, 3]
->>> nvim.eval('g:global_var')
-nvim.eval("getline(a:firstline, a:lastline)")
-```
-
-

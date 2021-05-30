@@ -7,7 +7,3 @@ SELECT @@servername;
 SELECT DB_NAME();
 
 SELECT @@version;
-
-SELECT aslkdfjalskdfjlaskjdf
-laksjdflakjsfldk
-laskdjflasjdflkaf

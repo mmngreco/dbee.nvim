@@ -1,26 +1,23 @@
 import pynvim
 import sqlalchemy as sa
 import pandas as pd
-# from configparser import ConfigParser
-# import urllib
 
 
 @pynvim.plugin
-class Dbee(object):
+class DBee(object):
 
     def __init__(self, nvim):
         self.nvim = nvim
         self.connection = None
         self.engine = None
         self.url = None
-        self.url = "sqlite:////home/mgreco/gitlab/mmngreco/dbee.nvim/tests/chinook.db"
         self.is_ready = False
 
-    @pynvim.command('DBInfo')
+    @pynvim.command('DBeeInfo')
     def info(self):
-        self.nvim.command("echo '%s'" % self.url)
+        self.nvim.command("echo 'DBee is using %s'" % self.url)
 
-    @pynvim.command('DBSetConnection', nargs='*')
+    @pynvim.command('DBeeSetConnection', nargs='*')
     def set_connection(self, url):
 
         if isinstance(url, list):
@@ -29,7 +26,7 @@ class Dbee(object):
         else:
             _url = self.url
 
-        self.nvim.command("echo '%s'" % _url)
+        self.nvim.command("echo 'Configurated %s'" % _url)
 
         engine = sa.create_engine(_url)
         self.connection = engine.connect()
@@ -41,7 +38,7 @@ class Dbee(object):
         nvim.command(":setl splitright")
         nvim.command(":vsplit __DBee__")
 
-    @pynvim.command('DBQuery', nargs='*', range='')
+    @pynvim.command('DBeeQuery', nargs='*', range='')
     def get_query(self, args, range):
 
         if not self.is_ready:
