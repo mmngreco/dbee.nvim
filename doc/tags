@@ -1,6 +1,9 @@
+DBeeInfo	dbee.txt	/*DBeeInfo*
+DBeeQuery	dbee.txt	/*DBeeQuery*
+DBeeSetConnection	dbee.txt	/*DBeeSetConnection*
 dbee-contents	dbee.txt	/*dbee-contents*
 dbee-intro	dbee.txt	/*dbee-intro*
-dbee-usage	dbee.txt	/*dbee-usage*
+dbee-license	dbee.txt	/*dbee-license*
 dbee-mappings	dbee.txt	/*dbee-mappings*
-dbee-license	dbee.txt	*dbee-license*
+dbee-usage	dbee.txt	/*dbee-usage*
 dbee.txt	dbee.txt	/*dbee.txt*

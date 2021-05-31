@@ -1,9 +1,11 @@
-if exists('loaded_dbee')
+if !has('python3')
+    echo "No Python3 found, DBee.nvim will be disabled."
+    finish
+elseif exists('loaded_dbee')
     finish
 endif
-let loaded_dbee=1
 
-echo 'Loaded dbee.nvim'
+let loaded_dbee=1
 
 function DBeeMarkBuffer()
     setlocal buftype=nofile
@@ -13,5 +15,18 @@ function DBeeMarkBuffer()
     nnoremap <buffer> q :bd!<cr>
 endfunction
 
-autocmd! BufNewFile __DBee__ call DBeeMarkBuffer()
 
+" function DBeeInstallDependencies()
+"     :python3 << EOF
+"     from pathlib import Path
+
+"     dbee_root = Path(vim.eval("expand('<sfile>:p:h')")) / '..'
+"     dbee_installer = (dbee_root / "install.py").expanduser().absolute()
+"     pybin = "pyfile"
+"     vim.eval("%s -u %s" % (pybin, dbee_installer))
+
+"     EOF
+"     :UpdateRemotePlugins
+" endfunction
+
+autocmd! BufNewFile __DBee__ call DBeeMarkBuffer()

@@ -1,21 +1,45 @@
 # dbee.nvim
 
-
 `dbee.nvim` is a SQL explorer in vim with Python as backend. Allow you setup a
 database connection using an url which is processed by SQLAlchemy and returns
 the query result in a new buffer.
 
 # Installation
 
-
-```vim
-Plug 'https://github.com/mmngreco/debee.nvim' {':UpdateRemotePlugins'}
-```
-
 ## Python dependencies
 
-- sqlalchemy
-- pandas
+- `SQLAlchemy`
+- `pandas`
+
+
+Add de following in your `vimrc`:
+
+```vim
+Plug 'https://github.com/mmngreco/debee.nvim', { 'do': './install.py' }
+```
+
+> Note: `python3 ./install.py` will install dependencies required in
+> `requirements-base.txt`
+
+If your prefer to manage dependencies yourself, you can add the following
+instead:
+
+```vim
+Plug 'https://github.com/mmngreco/debee.nvim'
+```
+
+and then you will need to execute `pip install -r requirements-base.py` in the
+python environment used by vim.
+
+## Update remote plugins
+
+After running plug installation, you will need to execute
+`:UpdateRemotePlugins` to include the python code in vim, and restart.
+
+```vim
+:UpdateRemotePlugins
+:qa
+```
 
 # Usage
 
