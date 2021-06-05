@@ -1,6 +1,13 @@
 SELECT title FROM albums;
 
+SELECT title
+FROM albums;
+
 SELECT * FROM albums LIMIT 15;
+
+SELECT *
+FROM albums
+LIMIT 15;
 
 SELECT @@servername;
 

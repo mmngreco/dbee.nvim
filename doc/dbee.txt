@@ -32,7 +32,7 @@ Section 2: Usage                                                   *dbee-usage*
 
 *DBeeSetConnection* set the connection which will be used by SQLAlchemy.
 
-    :DBeeSetConnection sqlite:///./tests/chinook.db
+    :DBeeSetConnection sqlite:///./tests/chinook.db<cr><cr>
 
 *DBeeQuery* returns the query in a new buffer, press q to delete the buffer.
 To do that select a query and press ":DBeeQuery".
