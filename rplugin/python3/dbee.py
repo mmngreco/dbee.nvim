@@ -41,8 +41,16 @@ class DBee(object):
         cmd("nnoremap <buffer> Q :bdelete!<cr>")
         cmd("echo 'Press Q to close the buffer.'")
 
-    @pynvim.command('DBeeSetConnection', nargs='*')
-    def set_connection(self, url):
+    def get_selection(self):
+        prev_reg = self.nvim.command_output("echo getreg('n')")
+        self.nvim.command("normal \"ny")
+        out = self.nvim.command_output("echo getreg('n')").strip()
+        self.nvim.command("call setreg('n', '%s')" % prev_reg)
+        self.nvim.command("echo '%s'" % out)
+        return out
+
+    @pynvim.command('DBeeSetConnection', nargs='*', range='')
+    def set_connection(self, url, range):
         """Set connection.
 
         Update the url attribute and creates an sqlalchemy engine with it.
@@ -56,12 +64,16 @@ class DBee(object):
         >>> :DBeeSetConnection sqlite:///./dbee.nvim/tests/chinook.db
         Configurated sqlite:///./dbee.nvim/tests/chinook.db
         """
-
-        if isinstance(url, list):
+        if len(range) and not len(url):
+            # Visual mode
+            _url = self.get_selection()
+            self.url = _url
+        elif isinstance(url, list):
+            # Command mode
             _url = url[0]
             self.url = _url
         else:
-            _url = self.url
+            raise NotImplementedError("url not processed, %s" % url)
 
         engine = sa.create_engine(_url)
         self.connection = engine.connect()

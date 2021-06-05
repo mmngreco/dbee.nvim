@@ -54,10 +54,17 @@ No mappings defined by default. You can define your own mapping adding
 something like this in your `vimrc`:
 
 ```vim
-vnoremap <C-q> DBeeQuery
+vnoremap <C-q> :DBeeQuery<cr>
+vnoremap <C-c> :DBeeSetConnection<cr><cr>
 ```
 
 # Development
+
+```bash
+conda create -n dbee.nvim python=3.8
+conda activate dbee.nvim
+pip install -r requirements.txt
+```
 
 ```bash
 ./run.sh vim
