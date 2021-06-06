@@ -19,7 +19,7 @@ the query result in a new buffer.
 Add de following in your `vimrc`:
 
 ```vim
-Plug 'mmngreco/debee.nvim', { 'do': './install.py' }
+Plug 'mmngreco/dbee.nvim', { 'do': './install.py' }
 ```
 
 > Note: `python3 ./install.py` will install dependencies required in
