@@ -4,26 +4,28 @@
 database connection using an url which is processed by SQLAlchemy and returns
 the query result in a new buffer.
 
-![](https://i.imgur.com/N2W8dbB.gif) 
+![](https://i.imgur.com/N2W8dbB.gif)
 
-# Installation
+## dependencies
 
-## Python dependencies
+### Python
 
 - `SQLAlchemy`
-- `pandas`
+- `Pandas`
+- `pynvim`
 
+# Installation
 
 Add de following in your `vimrc`:
 
 ```vim
-Plug 'https://github.com/mmngreco/debee.nvim', { 'do': './install.py' }
+Plug 'mmngreco/debee.nvim', { 'do': './install.py' }
 ```
 
 > Note: `python3 ./install.py` will install dependencies required in
 > `requirements-base.txt`
 
-If your prefer to manage dependencies yourself, you can add the following
+If do your prefer to manage dependencies yourself, you can add the following
 instead:
 
 ```vim
