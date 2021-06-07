@@ -29,7 +29,7 @@ If do your prefer to manage dependencies yourself, you can add the following
 instead:
 
 ```vim
-Plug 'https://github.com/mmngreco/dbee.nvim'
+Plug 'mmngreco/dbee.nvim'
 ```
 
 and then you will need to execute `pip install -r requirements-base.py` in the
