@@ -42,11 +42,12 @@ class DBee(object):
         cmd("echo 'Press Q to close the buffer.'")
 
     def get_selection(self):
-        prev_reg = self.nvim.command_output("echo getreg('n')")
-        self.nvim.command("normal \"ny")
-        out = self.nvim.command_output("echo getreg('n')").strip()
-        self.nvim.command("call setreg('n', '%s')" % prev_reg)
+        reg = "a"
+        prev_reg = self.nvim.command_output("echo getreg('%s')" % reg)
+        self.nvim.command("normal! gv\"%sy" % reg)
+        out = self.nvim.command_output("echo getreg('%s')" % reg).strip()
         self.nvim.command("echo '%s'" % out)
+        self.nvim.command("call setreg('%s', '%s')" % (reg, prev_reg))
         return out
 
     @pynvim.command('DBeeSetConnection', nargs='*', range='')
@@ -80,6 +81,7 @@ class DBee(object):
         self.engine = engine
         self.nvim.command("echo 'Configurated %s'" % _url)
         self.is_ready = True
+
         return self.is_ready
 
     @pynvim.command('DBeeSetPandasKw', nargs='*')

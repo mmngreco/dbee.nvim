@@ -1,4 +1,5 @@
 # sqlite:////home/mgreco/gitlab/mmngreco/dbee.nvim/tests/chinook.db
+# sqlite:///./tests/chinook.db
 
 SELECT title FROM albums;
 
