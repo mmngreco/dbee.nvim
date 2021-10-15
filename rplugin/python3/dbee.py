@@ -36,10 +36,10 @@ class DBee(object):
         Creates an scratch or temporal buffer to store the query. Also adds 'Q'
         as mapping to delete the buffer.
         """
-        cmd = self.nvim.command
-        cmd("setlocal nobuflisted noswapfile buftype=nofile bufhidden=delete")
-        cmd("nnoremap <buffer> Q :bdelete!<cr>")
-        cmd("echo 'Press Q to close the buffer.'")
+        send_cmd = self.nvim.command
+        # cmd("setlocal nobuflisted noswapfile buftype=nofile bufhidden=delete")
+        send_cmd("nnoremap <buffer> gq :q<cr>")
+        send_cmd("echo 'Press gq to close the buffer.'")
 
     def get_selection(self):
         reg = "a"
